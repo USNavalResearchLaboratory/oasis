@@ -1,0 +1,6 @@
+
+ifort -w -c -80 -no-ipo -check -traceback -pfe0 -r8 *.f
+THEN- make sure you copy over the *.o files from /nrlmsis2 (but not the msis1.97_test.o file which is the driver)
+
+ifort *.o -o oasis_sq.exe -mkl
+./oasis_sq.exe > file.log &
