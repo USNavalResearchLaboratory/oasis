@@ -1,0 +1,10 @@
+make sure you have an output subdirectory for the output txt file
+This is what compiles on the NRL system with Intel Fortran. It will also work with
+gfortran, but I have not used that recently
+
+ifort -w -c -80 -no-ipo -check -traceback -pfe0 -r8 *.f
+THEN- make sure you have msis2 ready to go: read_msis.f calls gtd8d
+
+
+ifort *.o -o oasis_lws.exe 
+./oasis_lws > file.log &
